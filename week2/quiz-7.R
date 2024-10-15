@@ -37,17 +37,12 @@ mean(X)
 library(rafalib)
 sd(X)
 
+2 * ( 1-pnorm(2/sd(X) * sqrt(12) ) )
 
-# Given values
-mu <- 0       # True mean (hypothetically)
-n <- 100      # Sample size (example)
-sigma <- 5    # Standard deviation of the population (example)
+sqrt(sd(Y)^2/12 + sd(X)^2/12)
+t.test(Y, X)
 
-# Calculate the z-score for being off by more than 2 grams
-z <- 2 / (sigma / sqrt(n))
-
-# Approximate the probability using the normal distribution
-prob <- 2 * (1 - pnorm(z))
-
-# Print the result
-prob
+t_test = ( mean(Y) - mean(X) ) / sqrt(var(X)/12 + var(Y)/12)
+                                       
+2 * (1-pnorm(t_test))
+                                       
